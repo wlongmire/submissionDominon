@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+.graph {
+  height: 200px;
+  margin-top: 5px;
+}
+
+.dataBlock {
+  height:50%;
+}
+
+.dataBlock-label .h6 {
+  font-weight: normal;
+  font-size: 0.3em;
+}
+
+.nav-item .btn {
+  background: grey;
+    border-radius: 2px;
+    border: none;
+    color: black;
+    font-size: 0.8em;
+}
+
+.subInfo .h5{
+  font-size: 1em;
+}
+
+.subInfo .closeDate{
+  font-size: 0.6em;
+  padding: 0px;  
+}
+
+.subLink {
+  text-transform: uppercase;
+  font-size: 0.5em;
+  color:grey;
+}
+
+.closeTime {
+  font-size: 0.7em;
+}
+
+.subTags .badge{
+  background: none;
+  color: black;
+  border: 1px solid black;
+  font-weight: normal;
+}
