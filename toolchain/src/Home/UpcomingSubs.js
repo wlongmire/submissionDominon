@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SubItem from './SubItem';
 
 export default class UpcomingSubs extends React.Component {
@@ -14,7 +15,9 @@ export default class UpcomingSubs extends React.Component {
             subs.map((item, idx) => (<SubItem key={idx} item={item} />))
           }
         </div>
-
+        <div className="text-center">
+          <Link to="/stats/subs">See All Submissions</Link>
+        </div>
       </div>
     );
   }

@@ -26,7 +26,7 @@ export default class NavBar extends React.Component {
               </li>
 
               <li className="nav-item m-1">
-                <Link to="/stats" className="nav-link btn btn-primary btn-sm">View Stats</Link>
+                <Link to="/stats/stats" className="nav-link btn btn-primary btn-sm">View Stats</Link>
               </li>
             </ul>
           </div>
