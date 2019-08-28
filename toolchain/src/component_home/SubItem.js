@@ -24,7 +24,7 @@ export default class SubItem extends React.Component {
         </div>
       </div>
 
-      <Link to={`/edit/${id}`}>
+      <Link to={`/submissions/edit/${id}`}>
         <button className="btn btn-primary">EDIT</button>
       </Link>
     </div>);

@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import DataBlock from './DataBlock';
 
-export default class InfoSection extends React.Component {
+class InfoSection extends React.Component {
   render() {
-    let { info } = this.props;
-
+    let { information } = this.props;
 
     return (
       <div id="stats" className="col-sm-12 col-md-7 mt-2">
@@ -12,7 +13,7 @@ export default class InfoSection extends React.Component {
 
         <div className="row">
           {
-            info.map((item, idx) => (
+            information.map((item, idx) => (
               <DataBlock key={idx} item={item} />
             ))
           }
@@ -20,8 +21,16 @@ export default class InfoSection extends React.Component {
             <h1>Graph</h1>
           </div>
         </div>
-
+        <div className="text-center">
+          <Link to="/submissions/stats">See All Stats</Link>
+        </div>
       </div>
     );
   }
 }
+
+export default connect(({ information }) => {
+  return {
+    information
+  }
+})(InfoSection);

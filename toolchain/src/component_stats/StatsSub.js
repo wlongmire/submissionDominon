@@ -2,13 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 
-let NewBasics = () => {
+let StatsSub = ({ id }) => {
   return (
     <div className="container">
-      <h1>Basics</h1>
-      <Link to={`/new/details`}>Details</Link>
+      <h1>{`StatsSub ${id}`}</h1>
     </div>
   );
 }
 
-export default NewBasics;
+export default StatsSub;

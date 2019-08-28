@@ -28,3 +28,9 @@ The other issues is whether I just want to rough in the html on all the pages fi
 I kind of like the idea of getting edit working.
 
 _______________________________
+
+Alright. So we have redux implemented.
+Now we should hook up the remaining features needed to interact with the data.
+I could also add in the remaining basic html for any other pages and then load in anything that shows or filters that data.
+That would be a good use of time...that would also open the door to more fine tuning of the home page and even graphing there...
+Let's do that..

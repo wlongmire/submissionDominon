@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SubItem from './SubItem';
+import { connect } from 'react-redux';
 
-export default class UpcomingSubs extends React.Component {
+class UpcomingSubs extends React.Component {
   render() {
-    let { subs } = this.props;
+    let { submissions } = this.props;
 
     return (
       <div id="upcomingSubs" className="col-sm-12 col-md-5 mt-2">
@@ -12,13 +13,20 @@ export default class UpcomingSubs extends React.Component {
 
         <div className="subItems">
           {
-            subs.map((item, idx) => (<SubItem key={idx} item={item} />))
+            submissions.map((item, idx) => (<SubItem key={idx} item={item} />))
           }
         </div>
         <div className="text-center">
-          <Link to="/stats/subs">See All Submissions</Link>
+          <Link to="/submissions/view">See All Submissions</Link>
         </div>
       </div>
     );
   }
 }
+
+export default connect(({ submissions }) => {
+  return {
+    submissions
+  }
+})(UpcomingSubs);
+

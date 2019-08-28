@@ -1,6 +1,4 @@
-import moment from 'moment';
 import submissions from './data';
-import uuidv1 from 'uuid/v1';
 
 export default (state = submissions, action) => {
   switch (action.type) {

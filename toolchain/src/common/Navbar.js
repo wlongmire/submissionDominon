@@ -14,19 +14,19 @@ export default class NavBar extends React.Component {
           <div className="collapse navbar-collapse push-right w-100 justify-content-end" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item m-1">
-                <Link to="/new" className="nav-link btn btn-primary btn-sm">Add A Submission</Link>
+                <Link to="/submissions/new" className="nav-link btn btn-primary btn-sm">Add A Submission</Link>
               </li>
 
               <li className="nav-item m-1">
-                <Link to="/edit" className="nav-link btn btn-primary btn-sm">Edit A Submission</Link>
+                <Link to="/submissions/edit" className="nav-link btn btn-primary btn-sm">Edit A Submission</Link>
               </li>
 
               <li className="nav-item m-1">
-                <Link to="/edit" className="nav-link btn btn-primary btn-sm">Got A Response!</Link>
+                <Link to="/submissions/view" className="nav-link btn btn-primary btn-sm">View Submissions</Link>
               </li>
 
               <li className="nav-item m-1">
-                <Link to="/stats/stats" className="nav-link btn btn-primary btn-sm">View Stats</Link>
+                <Link to="/submissions/stats" className="nav-link btn btn-primary btn-sm">View Stats</Link>
               </li>
             </ul>
           </div>

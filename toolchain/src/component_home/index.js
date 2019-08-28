@@ -8,8 +8,8 @@ export default class Home extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <UpcomingSubs subs={subs} />
-          <InfoSection info={info} />
+          <UpcomingSubs />
+          <InfoSection />
         </div>
       </div>
     );
