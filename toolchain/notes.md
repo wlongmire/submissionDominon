@@ -34,3 +34,13 @@ Now we should hook up the remaining features needed to interact with the data.
 I could also add in the remaining basic html for any other pages and then load in anything that shows or filters that data.
 That would be a good use of time...that would also open the door to more fine tuning of the home page and even graphing there...
 Let's do that..
+_______________________________
+So I didn't do any of that.
+Strike that. I did put in a form for create.
+In doing that, though, i realized that I would be better off with a seperate view route and a resourced based (remember that?) overall routing system. There is only on resource here, but it still makes since as poems and organizations could in the future be another. I wonder if there are any preset resource based routing packages for react. Really do need to take a look at gasby.
+
+Anyway, I now have what I think is a better, more clean routing system.
+
+I'm good on code for now, but I think the next step for me should be to create an overall component for listing submissions and store that within the common folder.
+
+Now to find a poem or two to read.

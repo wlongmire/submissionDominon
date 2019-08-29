@@ -8,7 +8,7 @@ class InfoSection extends React.Component {
     let { information } = this.props;
 
     return (
-      <div id="stats" className="col-sm-12 col-md-7 mt-2">
+      <div>
         <h4 className="border-bottom">Information</h4>
 
         <div className="row">

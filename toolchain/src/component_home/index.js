@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import UpcomingSubs from './UpcomingSubs';
+import SubmissionList from './../common/SubmissionList';
 import InfoSection from './InfoSection';
 
 export default class Home extends React.Component {
@@ -8,8 +9,16 @@ export default class Home extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <UpcomingSubs />
-          <InfoSection />
+
+          <div className="col-sm-12 col-md-5 mt-2">
+            <SubmissionList title="Upcoming Submission" />
+            <div className="text-center">
+              <Link to="/submissions/view">See All Submissions</Link>
+            </div>
+          </div>
+          <div className="col-sm-12 col-md-7 mt-2">
+            <InfoSection />
+          </div>
         </div>
       </div>
     );
