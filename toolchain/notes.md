@@ -44,3 +44,10 @@ Anyway, I now have what I think is a better, more clean routing system.
 I'm good on code for now, but I think the next step for me should be to create an overall component for listing submissions and store that within the common folder.
 
 Now to find a poem or two to read.
+_______________________________
+
+So that was done, which is great, but the entire flow of the app is different now. I think I should go into xd and make this this look good. Be great to dig into the flow a bit more and make sure it matches our current routing.
+
+OR I could hook up creation...
+
+Let's do creation real quick...
