@@ -7,7 +7,7 @@ let EditSelect = ({ match }) => {
   const id = 1;
 
   return (
-    <div className="container">
+    <div className="container fullscreen">
       <h1>Edit</h1>
       <SubmissionList />
       <Link to={`/submissions/edit/${id}`}>Pick a sub to edit</Link>

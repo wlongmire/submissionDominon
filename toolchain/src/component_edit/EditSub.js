@@ -5,7 +5,7 @@ import './style.css';
 let EditSub = (props) => {
   const { id } = props;
 
-  return (<div className="container">
+  return (<div className="container fullscreen">
     <h1>{`Editing Sub: ${id}`}</h1>
     <Link to="/submissions/edit">Back to all Subs</Link>
   </div>);

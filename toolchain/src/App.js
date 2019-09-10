@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Navbar from './common/Navbar';
+import Navbar from './common/Navbar/index.js';
+import Footer from './common/Footer/index.js';
+
 import Home from './component_home/index.js';
 import New from './component_new/index.js';
 import Edit from './component_edit/index.js';
@@ -23,6 +25,7 @@ function App() {
         <Route exact path="/submissions/view/:id" component={View} />
         <Route exact path="/submissions/stats" component={Stats} />
         <Route exact path="/submissions/stats/:id" component={Stats} />
+        <Footer />
       </Router>
     </div>
 

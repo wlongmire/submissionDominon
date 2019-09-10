@@ -48,7 +48,7 @@ class NewBasics extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container fullscreen">
         <h1>Enter Journal Information</h1>
         <form>
           <div className="form-group">

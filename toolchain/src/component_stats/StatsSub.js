@@ -4,7 +4,7 @@ import './style.css';
 
 let StatsSub = ({ id }) => {
   return (
-    <div className="container">
+    <div className="container fullscreen">
       <h1>{`StatsSub ${id}`}</h1>
     </div>
   );

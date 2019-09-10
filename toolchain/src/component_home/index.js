@@ -7,7 +7,7 @@ import InfoSection from './InfoSection';
 export default class Home extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div className="container fullscreen">
         <div className="row">
 
           <div className="col-sm-12 col-md-5 mt-2">

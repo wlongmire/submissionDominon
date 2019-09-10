@@ -1,0 +1,22 @@
+.navbar {
+  border-bottom: solid black;
+  background-color: darkorange;
+}
+
+.navbar .nav-link {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-left:1.5em;
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+  text-decoration: underline;
+}
+
+.navbar-toggler-icon {
+  color: white;
+  font-size:2em;
+  height:auto;
+  width:auto;
+}
