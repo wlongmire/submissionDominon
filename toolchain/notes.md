@@ -58,3 +58,10 @@ I've started to move that into the main design and it looks good.
 
 Parts of my core front interface needs submission filtering. Thinking I should add an action that allows for filtering of the submissions. Let's do that...
 
+_______________________________
+
+Ok so I need to check out those selectors next.
+They are clearly not giving me the values I want.
+Once that is done, I have a choice between if I want to add in tests now that I have a more complex site structure or to proceed with styling of the home page.
+
+(you should do tests.... you know you should do tests. It will make you feel better about life)
