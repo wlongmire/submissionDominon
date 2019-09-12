@@ -11,7 +11,7 @@ export default class Home extends React.Component {
         <div className="row">
 
           <div className="col-sm-12 col-md-5 mt-2">
-            <SubmissionList title="Upcoming Submission" />
+            <SubmissionList />
             <div className="text-center">
               <Link to="/submissions/view">See All Submissions</Link>
             </div>

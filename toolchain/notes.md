@@ -51,3 +51,10 @@ So that was done, which is great, but the entire flow of the app is different no
 OR I could hook up creation...
 
 Let's do creation real quick...
+_______________________________
+
+Alright, so I have a plan for the redesign.
+I've started to move that into the main design and it looks good.
+
+Parts of my core front interface needs submission filtering. Thinking I should add an action that allows for filtering of the submissions. Let's do that...
+

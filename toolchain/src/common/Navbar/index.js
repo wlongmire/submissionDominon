@@ -11,7 +11,7 @@ const NavBar = (props) => {
           <img src="./images/logo-02.png" />
         </Link>
         <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
-          <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+          <span className="navbar-toggler-icon"><i className="fas fa-bars"></i></span>
         </button>
         <div className="collapse navbar-collapse push-right w-100 justify-content-end" id="navbarNav">
           <ul className="navbar-nav">

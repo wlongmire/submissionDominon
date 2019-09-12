@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SubItem from './SubItem';
 import { connect } from 'react-redux';
+import submissionFilter from './../../data_submissions/selectors';
 
 class SubmissionList extends React.Component {
   render() {
@@ -22,7 +23,9 @@ class SubmissionList extends React.Component {
 }
 
 export default connect(({ submissions }) => {
+  const filteredSubs = submissionFilter(submissions, { sortBy: "CLOSE_SORT" });
+
   return {
-    submissions
+    submissions: filteredSubs
   }
 })(SubmissionList);
