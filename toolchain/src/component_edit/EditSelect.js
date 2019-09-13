@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 import CONSTANTS from './../common/constants'
-import submissionSelectors from './../data_submissions/selectors'
+import { filtering } from './../data_submissions/selectors'
 
 import SubmissionList from './../common/SubmissionList';
 
@@ -21,7 +21,7 @@ let EditSelect = ({ submissions }) => {
 }
 
 export default connect(({ submissions }) => {
-  const filteredSubs = submissionSelectors.filtering(submissions, {})
+  const filteredSubs = filtering(submissions, {})
 
   return {
     submissions: filteredSubs

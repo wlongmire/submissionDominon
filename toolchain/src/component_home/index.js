@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import CONSTANTS from './../common/constants'
-import submissionSelectors from './../data_submissions/selectors'
+import { filtering } from './../data_submissions/selectors'
 
 import SubmissionList from './../common/SubmissionList'
 import InfoSection from './InfoSection'
@@ -57,14 +57,14 @@ class Home extends React.Component {
 }
 
 export default connect(({ submissions }) => {
-  const closingSubmissions = submissionSelectors.filtering(submissions, {
+  const closingSubmissions = filtering(submissions, {
     filterDateType: CONSTANTS.SUB_LIST.DATE_RANGE_TYPE.CLOSE,
     startDate: moment(),
     endDate: moment().add(1, "month"),
     status: CONSTANTS.SUB_LIST.STATUS_FILTER.READY_TO_SUBMIT
   })
 
-  const waitingSubmissions = submissionSelectors.filtering(submissions, {
+  const waitingSubmissions = filtering(submissions, {
     status: [CONSTANTS.SUB_LIST.STATUS_FILTER.SUBMITTED, CONSTANTS.SUB_LIST.STATUS_FILTER.READY_TO_SUBMIT, CONSTANTS.SUB_LIST.STATUS_FILTER.NOT_STARTED]
   })
 

@@ -9,20 +9,23 @@ const isInDateRange = (submission, filterDateType, startDate, endDate) => {
 }
 
 const isStatus = (submission, status) => {
-  if (String.isString(submission.status))
-    return submission.status.find(status)
-  else if (Array.isArray(submission.status))
-    return submission.status === status
+  if (typeof status == "string")
+    return status === submission.status
+  else if (Array.isArray(status))
+    return status.indexOf(submission.status) !== -1
   else
     throw "Status Parameter is not of an approved type."
 }
 
-const filtering = (submissions, { sortBy, text, tag, status, startDate, endDate, filterDateType }) => {
+const filtering = (submissions, { sortBy, text, tags, status, startDate, endDate, filterDateType }) => {
   return submissions.filter((submission) => {
-    const statusMatch = status ? isStatus : true
+
+    const textMatch = text ? (submission.title.indexOf(text) !== -1 || submission.description.indexOf(text) !== -1) : true
+    const tagMatch = tags ? (submission.tags.filter(tag => tags.includes(tag)).length > 0) : true
+    const statusMatch = status ? isStatus(submission, status) : true
     const filterDate = filterDateType ? isInDateRange(submission, filterDateType, startDate, endDate) : true
 
-    return statusMatch && filterDate
+    return statusMatch && filterDate && textMatch && tagMatch
   }).sort((a, b) => {
     switch (sortBy) {
       case (CONSTANTS.SUB_LIST.SORTING.SUBMISSION):
@@ -36,7 +39,7 @@ const filtering = (submissions, { sortBy, text, tag, status, startDate, endDate,
   });
 }
 
-export default {
+export {
   filtering,
   isInDateRange,
   isStatus
