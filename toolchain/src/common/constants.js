@@ -11,6 +11,7 @@ export default {
       SUBMISSION: "SUBMISSION_SORT",
       RETURN: "RETURN_SORT",
       CLOSE: "CLOSE_SORT",
+      TITLE: "TITLE_SORT",
     },
     DATE_RANGE_TYPE: {
       CREATED_AT: 'CREATED_AT',

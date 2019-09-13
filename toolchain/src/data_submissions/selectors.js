@@ -34,8 +34,11 @@ const filtering = (submissions, { sortBy, text, tags, status, startDate, endDate
         return a.returnDate > b.returnDate ? 1 : -1
       case (CONSTANTS.SUB_LIST.SORTING.CLOSE):
         return a.closeDate > b.closeDate ? 1 : -1
+      case (CONSTANTS.SUB_LIST.SORTING.TITLE):
+        return a.title > b.title ? 1 : -1
     }
-    return a.title > b.title ? 1 : -1
+
+    return a.createdAt > b.createdAt ? 1 : -1
   });
 }
 
