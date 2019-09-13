@@ -65,3 +65,7 @@ They are clearly not giving me the values I want.
 Once that is done, I have a choice between if I want to add in tests now that I have a more complex site structure or to proceed with styling of the home page.
 
 (you should do tests.... you know you should do tests. It will make you feel better about life)
+
+________________________________
+We are going to do tests.
+

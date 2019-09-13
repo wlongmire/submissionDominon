@@ -1,10 +1,10 @@
-import uuidv1 from 'uuid/v1';
+import uuidv from 'uuid/v1';
 
 //action generators
-export const addSub = ({ title, closeDate, submitURL, journalURL, description }) => ({
+export const addSub = ({ id = uuidv(), title, closeDate, submitURL, journalURL, description }) => ({
   type: "ADD_SUB",
   submission: {
-    id: uuidv1(), title, closeDate, submitURL, journalURL, description
+    id, title, closeDate, submitURL, journalURL, description
   }
 });
 
