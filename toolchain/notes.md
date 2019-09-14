@@ -68,4 +68,17 @@ Once that is done, I have a choice between if I want to add in tests now that I 
 
 ________________________________
 We are going to do tests.
+________________________________
+ALl the submission data related tests are done!
+components will probably be next...it's worth it though
+totally worth it.....
+________________________________
+So next we test 
+1. reducers
+2. snapshot tests on components
+  - rendering correctly based on parameters
+  - rendering correctly based on user interaction
 
+I'm thinking that I should not go to deep into this right now, the user interact is pretty bare bones right now.
+
+I kind of just want to have tests for all my components and then add to them as I work on indivisual components.

@@ -1,29 +1,11 @@
 import { isInDateRange, isStatus, filtering } from './selectors'
 
 import CONSTANTS from './../common/constants'
+import { createSubmission } from './../common/helper'
 import moment from 'moment'
 
 const STATUSES = CONSTANTS.SUB_LIST.STATUS_FILTER;
 
-const createSubmission = (submission) => {
-  return ({
-    id: 1,
-    title: "Test Title",
-    status: "NOT_STARTED",
-    accepted: null,
-    submissionDate: null,
-    returnDate: null,
-    closeDate: null,
-    createdAt: moment(),
-    tags: [],
-    pieces: [],
-    submitURL: "https://www.submitTest.com",
-    journalURL: "https://www.journalTest.com",
-    description: "Phasellus ullamcorper elementum dis adipiscing vestibulum torquent praesent varius placerat fames scelerisque condimentum ante tristique morbi ipsum natoque vestibulum porta donec parturient augue lacinia nascetur faucibus cum feugiat in.",
-    log: [],
-    ...submission
-  })
-}
 
 describe("Submission Selector", () => {
   describe("isInDateRange", () => {
@@ -175,16 +157,16 @@ describe("Submission Selector", () => {
 
     test("should filter by date for closing", () => {
       const submissions = [
-        createSubmission({ closeDate: moment() }),
-        createSubmission({ closeDate: moment() }),
-        createSubmission({ closeDate: moment().add(1, 'week') }),
-        createSubmission({ closeDate: moment().add(2, 'week') }),
+        createSubmission({ closeDate: moment('2016-01-01') }),
+        createSubmission({ closeDate: moment('2016-01-01') }),
+        createSubmission({ closeDate: moment('2016-01-01').add(1, 'week') }),
+        createSubmission({ closeDate: moment('2016-01-01').add(2, 'week') }),
       ];
 
       const result = filtering(submissions, {
         filterDateType: CONSTANTS.SUB_LIST.DATE_RANGE_TYPE.CLOSE,
-        startDate: moment(),
-        endDate: moment()
+        startDate: moment('2016-01-01'),
+        endDate: moment('2016-01-01').add(1, 'day')
       });
 
       expect(result.length).toBe(2);
@@ -192,16 +174,16 @@ describe("Submission Selector", () => {
 
     test("should filter by date for submission", () => {
       const submissions = [
-        createSubmission({ submissionDate: moment() }),
-        createSubmission({ submissionDate: moment() }),
-        createSubmission({ submissionDate: moment().add(1, 'week') }),
-        createSubmission({ submissionDate: moment().add(2, 'week') }),
+        createSubmission({ submissionDate: moment('2016-01-01') }),
+        createSubmission({ submissionDate: moment('2016-01-01') }),
+        createSubmission({ submissionDate: moment('2016-01-01').add(1, 'week') }),
+        createSubmission({ submissionDate: moment('2016-01-01').add(2, 'week') }),
       ];
 
       const result = filtering(submissions, {
         filterDateType: CONSTANTS.SUB_LIST.DATE_RANGE_TYPE.SUBMISSION,
-        startDate: moment(),
-        endDate: moment()
+        startDate: moment('2016-01-01'),
+        endDate: moment('2016-01-01').add(1, 'day')
       });
 
       expect(result.length).toBe(2);
@@ -209,16 +191,16 @@ describe("Submission Selector", () => {
 
     test("should filter by date for returning", () => {
       const submissions = [
-        createSubmission({ returnDate: moment() }),
-        createSubmission({ returnDate: moment() }),
-        createSubmission({ returnDate: moment().add(1, 'week') }),
-        createSubmission({ returnDate: moment().add(2, 'week') }),
+        createSubmission({ returnDate: moment('2016-01-01') }),
+        createSubmission({ returnDate: moment('2016-01-01') }),
+        createSubmission({ returnDate: moment('2016-01-01').add(1, 'week') }),
+        createSubmission({ returnDate: moment('2016-01-01').add(2, 'week') }),
       ];
 
       const result = filtering(submissions, {
         filterDateType: CONSTANTS.SUB_LIST.DATE_RANGE_TYPE.RETURNED,
-        startDate: moment(),
-        endDate: moment()
+        startDate: moment('2016-01-01'),
+        endDate: moment('2016-01-01').add(1, 'day')
       });
 
       expect(result.length).toBe(2);
@@ -226,16 +208,16 @@ describe("Submission Selector", () => {
 
     test("should sort a list of submissions by closing date", () => {
       const submissions = [
-        createSubmission({ closeDate: moment() }),
-        createSubmission({ closeDate: moment() }),
-        createSubmission({ closeDate: moment().add(1, 'week') }),
-        createSubmission({ closeDate: moment().add(2, 'week') }),
+        createSubmission({ closeDate: moment('2016-01-01') }),
+        createSubmission({ closeDate: moment('2016-01-01') }),
+        createSubmission({ closeDate: moment('2016-01-01').add(1, 'week') }),
+        createSubmission({ closeDate: moment('2016-01-01').add(2, 'week') }),
       ];
 
       const result = filtering(submissions, {
         filterDateType: CONSTANTS.SUB_LIST.DATE_RANGE_TYPE.CLOSE,
-        startDate: moment(),
-        endDate: moment()
+        startDate: moment('2016-01-01'),
+        endDate: moment('2016-01-01').add(1, 'day')
       });
 
       expect(result.length).toBe(2);
@@ -310,7 +292,6 @@ describe("Submission Selector", () => {
       ];
 
       const result = filtering(submissions, {});
-
       expect(result.map(r => r.title)).toEqual(["D", "C", "A", "B"])
     })
   })
