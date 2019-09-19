@@ -17,14 +17,16 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <Route exact path="/" component={Home} />
-        <Route path="/submissions/new" component={New} />
-        <Route exact path="/submissions/edit" component={Edit} />
-        <Route exact path="/submissions/edit/:id" component={Edit} />
-        <Route exact path="/submissions/view" component={View} />
-        <Route exact path="/submissions/view/:id" component={View} />
-        <Route exact path="/submissions/stats" component={Stats} />
-        <Route exact path="/submissions/stats/:id" component={Stats} />
+        <div className="container fullscreen">
+          <Route exact path="/" component={Home} />
+          <Route path="/submissions/new" component={New} />
+          <Route exact path="/submissions/edit" component={Edit} />
+          <Route exact path="/submissions/edit/:id" component={Edit} />
+          <Route exact path="/submissions/view" component={View} />
+          <Route exact path="/submissions/view/:id" component={View} />
+          <Route exact path="/submissions/stats" component={Stats} />
+          <Route exact path="/submissions/stats/:id" component={Stats} />
+        </div>
         <Footer />
       </Router>
     </div>

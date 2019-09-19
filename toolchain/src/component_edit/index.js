@@ -6,7 +6,7 @@ import './style.css';
 
 let Edit = ({ match }) => {
   return (
-    <div>
+    <div className="container fullscreen">
       {
         (match.params.id) ? <EditSub id={match.params.id} /> : <EditSelect />
       }

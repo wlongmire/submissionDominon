@@ -8,7 +8,7 @@ import './style.css';
 
 let Stats = ({ match }) => {
   return (
-    <div>
+    <div className="container fullscreen">
       {
         (match.params.id) ? <StatsSub id={match.params.id} /> : <StatsSelect />
       }

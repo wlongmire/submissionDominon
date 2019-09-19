@@ -4,7 +4,7 @@ import SubmissionList from './../common/SubmissionList';
 
 let ViewSelect = ({ match }) => {
   return (
-    <div className="container fullscreen">
+    <div>
       <h1>View</h1>
       <SubmissionList title="viewSelection" />
       <Link to={`/submissions/view/1`} >View Submission 1</Link>

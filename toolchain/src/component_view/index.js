@@ -6,7 +6,7 @@ import './style.css';
 
 let View = ({ match }) => {
   return (
-    <div>
+    <div className="container fullscreen">
       {
         (match.params.id) ? <ViewSub id={match.params.id} /> : <ViewSelect />
       }

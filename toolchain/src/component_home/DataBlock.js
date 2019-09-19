@@ -5,14 +5,14 @@ export default class DataBlock extends React.Component {
     let { title, subtitle, amount } = this.props.item;
 
     return (
-      <div className="dataBlock col-sm-6 col-md-3 bg-primary text-white p-3 w-50">
-        <div className="dataBlock-label">
-          <span className="h5 w-100">{title}
-            <span className="d-block h6">{subtitle}</span>
-          </span>
+      <div className="dataBlock col-12 d-flex justify-content-space-between">
+        <div className="dataBlock-label w-50 text-center d-flex justify-content-center align-items-center">
+          {title}
         </div>
 
-        <span className="dataBlock-number d-block display-1 text-center w-100">{amount}</span>
+        <div className="dataBlock-number w-50 text-center d-flex justify-content-center align-items-center">
+          {amount}
+        </div>
       </div>
     );
   }

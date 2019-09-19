@@ -12,7 +12,7 @@ let EditSelect = ({ submissions }) => {
   const id = 1;
 
   return (
-    <div className="container fullscreen">
+    <div>
       <h1>Edit</h1>
       <SubmissionList submissions={submissions} />
       <Link to={`/submissions/edit/${id}`}>Pick a sub to edit</Link>

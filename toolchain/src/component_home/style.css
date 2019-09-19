@@ -1,0 +1,58 @@
+#submissionViews {
+  background: #EAEAEA;
+  padding: 1em;
+}
+
+.view {
+  padding:1em;
+}
+
+.view h2{
+  font-size: 1.7em;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-family: helvetica;
+  color: rgb(20, 20, 20);
+  font-style: italic;
+}
+
+
+#informationViews {
+  background: #BFBABA;
+  padding: 1em;
+}
+
+.dataBlock {
+  height:8em;
+  margin: 0 0 0.5em;
+  color: white;
+  border-radius: 5px;
+}
+
+.dataBlock-label {
+  background: #BA0056;
+  text-transform: uppercase;
+  font-family: helvetica;
+  font-weight: bolder;
+  font-size: 2em;
+  border-radius: 5px 0 0 5px;
+}
+
+.dataBlock-number {
+  background: #FF0076;
+  text-transform: uppercase;
+  font-family: helvetica;
+  font-weight: bolder;
+  font-size: 8em;
+  border-radius: 0 5px 5px 0;
+}
+
+.moreLink a {
+  color: black !important;
+  text-transform: uppercase;
+}
+
+.moreLink a:hover {
+  text-decoration: underline;
+}
+

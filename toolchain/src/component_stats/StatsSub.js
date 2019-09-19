@@ -4,9 +4,9 @@ import './style.css';
 
 let StatsSub = ({ id }) => {
   return (
-    <div className="container fullscreen">
-      <h1>{`StatsSub ${id}`}</h1>
-    </div>
+    <div>
+      < h1 > {`StatsSub ${id}`}</h1>
+    </div >
   );
 }
 

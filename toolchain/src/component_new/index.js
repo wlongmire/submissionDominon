@@ -6,7 +6,7 @@ import './style.css';
 let New = ({ match }) => {
 
   return (
-    <div>
+    <div className="container fullscreen">
       <Route path={`${match.url}`} component={NewBasics} />
     </div>
   );

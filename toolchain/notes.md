@@ -82,3 +82,5 @@ So next we test
 I'm thinking that I should not go to deep into this right now, the user interact is pretty bare bones right now.
 
 I kind of just want to have tests for all my components and then add to them as I work on indivisual components.
+_______________________________
+Ok. So let's do a little styling on this thing and prepare to show it off!
