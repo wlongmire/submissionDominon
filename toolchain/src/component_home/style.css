@@ -8,11 +8,11 @@
 }
 
 .view h2{
-  font-size: 1.7em;
+  font-size: 1em;
   font-weight: bolder;
   text-transform: uppercase;
   font-family: helvetica;
-  color: rgb(20, 20, 20);
+  color: #6c6c6c;
   font-style: italic;
 }
 

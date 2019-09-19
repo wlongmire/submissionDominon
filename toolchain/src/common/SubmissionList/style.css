@@ -14,19 +14,14 @@
   margin:0;
 }
 
-.details h1 {
+.details .title {
   text-transform: uppercase;
   font-family: Helvetica, sans-serif;
   font-weight: bolder;
   font-size: 1.3em;
-  line-height: 1.5em;
   color: white !important;
   padding: 0;
   margin: 0;
-}
-
-.details h2 {
-  
 }
 
 .details h1:hover {
@@ -46,7 +41,7 @@
 
 .details .moreBadge {
   border:0;
-  color:#09a738;
+  color:black;
   min-width:5em;
 }
 
@@ -76,7 +71,7 @@
   border-radius:3px;
   width:100%;
   font-size: 0.8em;
-  height:40%;
+  height:51%;
   font-family: helvetica;
   font-weight: bold;
 }
@@ -86,12 +81,15 @@
   color:white;
 }
 
-.status {
-  color:black;
-  align-self: center;
+.details .status, .details .closeDate {
+  color:white;
   font-family: Helvetica, sans-serif;
   font-weight: bolder;
   font-size:0.6em;
+  text-align: right;
   letter-spacing: 0;
-  text-align:center;
+}
+
+.details .closeDate {
+  color:black;
 }

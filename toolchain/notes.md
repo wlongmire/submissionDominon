@@ -84,3 +84,9 @@ I'm thinking that I should not go to deep into this right now, the user interact
 I kind of just want to have tests for all my components and then add to them as I work on indivisual components.
 _______________________________
 Ok. So let's do a little styling on this thing and prepare to show it off!
+_______________________________
+Ok. I think this round of styling is over.
+The most pertinant thing I can do is make sure that these filters are actually working.
+Then I want to get login through google working so I can link everything to google docs.
+
+I need to rest my head though. I feel like shit.

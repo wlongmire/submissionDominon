@@ -9,7 +9,6 @@ export default class SubItem extends React.Component {
       case ("status"):
         return (
           <div className="editButtonContainer col-3 d-flex flex-column justify-content-around">
-            <div className="status">READY TO SUBMIT</div>
             <button className="editButton">EDIT</button>
             <button className="dismissButton">DISMISS</button>
           </div>
@@ -18,7 +17,7 @@ export default class SubItem extends React.Component {
         return (
           <div className="editButtonContainer col-3 d-flex flex-column justify-content-around">
             <button className="editButton">Accepted</button>
-            <button className="dismissButton">Not Yet...</button>
+            <button className="dismissButton">Not Yet</button>
           </div>
         )
     }
@@ -35,7 +34,13 @@ export default class SubItem extends React.Component {
         <div className="row detailsContainer">
           <div className="details col-9">
 
-            <a href={submitURL} target="_blank" ><h1>{title}</h1></a>
+            <div className="d-flex justify-content-between align-items-start">
+              <a href={submitURL} target="_blank"><h1 className="title">{title.slice(0, 16) + ((title.length > 16) ? "..." : "")}</h1></a>
+              <div>
+                <div className="status">READY TO SUBMIT</div>
+                <div className="closeDate">{closeDate.format('M-DD-YYYY hh:MM')}</div>
+              </div>
+            </div>
             <div className="d-flex w-100 links">
               <a className="pr-2" href={journalURL} target="_blank">journal link</a>
               <a className="pr-2" href={submitURL} target="_blank" >submission link</a>
