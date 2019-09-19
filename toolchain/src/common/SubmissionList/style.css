@@ -77,6 +77,8 @@
   width:100%;
   font-size: 0.8em;
   height:40%;
+  font-family: helvetica;
+  font-weight: bold;
 }
 
 .dismissButton {

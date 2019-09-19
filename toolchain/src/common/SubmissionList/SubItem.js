@@ -18,7 +18,7 @@ export default class SubItem extends React.Component {
         return (
           <div className="editButtonContainer col-3 d-flex flex-column justify-content-around">
             <button className="editButton">Accepted</button>
-            <button className="dismissButton">Not this time</button>
+            <button className="dismissButton">Not Yet...</button>
           </div>
         )
     }
