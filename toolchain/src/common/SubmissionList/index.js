@@ -1,23 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import SubItem from './SubItem'
+import SubItemWait from './SubItem/SubItemWait'
+import SubItemClose from './SubItem/SubItemClose'
 
+const getSubItem = function (type, idx, item) {
+  const subItems = {
+    'closeItem': <SubItemWait key={idx} item={item} />,
+    'waitItem': <SubItemClose key={idx} item={item} />
+  }
 
-const SubmissionList = ({ submissions, buttonType }) => {
+  return (subItems[type]);
+}
+
+const SubmissionList = ({ submissions, type }) => {
   return (
     <div>
       <div className="subItems">
         {
-          submissions.map((item, idx) => (<SubItem buttonType={buttonType} key={idx} item={item} />))
+          submissions.map((item, idx) => (getSubItem(type, idx, item)))
         }
       </div>
     </div>
   );
 }
 
-export default connect(({ submissions }) => {
-  return ({
-    submissions
-  })
-})(SubmissionList);
+export default SubmissionList;

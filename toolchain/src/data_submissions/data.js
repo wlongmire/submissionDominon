@@ -9,6 +9,6 @@ const randInt = (min, max) => (
 export default [
   createSubmission({ title: "Ploughshares", journalURL: "https://www.pshares.org/", submitURL: "https://www.pshares.org/submission-manager", status: "NOT_STARTED", tags: ["Poetry", "Contest", "Print Version", "High Volume"], closeDate: moment().add(1, 'days') }),
   createSubmission({ title: "The Operating System", journalURL: "http://www.theoperatingsystem.org/", submitURL: " https://theoperatingsystem.submittable.com/submit", status: "READY_TO_SUBMIT", tags: ["Poetry", "Prose", "Visual Poetry", "Experimential", "Manuscript"], closeDate: moment().add(3, 'days') }),
-  createSubmission({ title: "Prolit", journalURL: "https://www.prolitmag.com", submitURL: "https://www.prolitmag.com/submit", status: "NOT_STARTED", tags: ["Poetry", "Art", "Labor", "Local"], closeDate: moment().add(1, "month") }),
+  createSubmission({ title: "Prolit", journalURL: "https://www.prolitmag.com", submitURL: "https://www.prolitmag.com/submit", status: "NOT_STARTED", tags: ["Poetry", "Art", "Labor", "Local"], closeDate: moment().add(2, "month") }),
   createSubmission({ title: "The Watering Hole", journalURL: "https://twhpoetry.org/", submitURL: "https://twhpoetry.submittable.com/submit", status: "SUBMITTED", tags: ["Poetry", "Black Focus", "Retreat"], closeDate: moment().add(3, "week") })
 ];

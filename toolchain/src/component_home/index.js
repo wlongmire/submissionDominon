@@ -27,7 +27,7 @@ class Home extends React.Component {
         <div id="submissionViews" className="col-sm-12 col-md-5 mt-2">
           <div className="view">
             <h2>Closing Soon</h2>
-            <SubmissionList buttonType="status" submissions={closingSubmissions.slice(0, MAX_CLOSING_SUBMISSIONS)} />
+            <SubmissionList type="closeItem" submissions={closingSubmissions.slice(0, MAX_CLOSING_SUBMISSIONS)} />
             {
               (closingSubmissions.length > MAX_CLOSING_SUBMISSIONS) && (
                 <div className="text-center">
@@ -39,7 +39,7 @@ class Home extends React.Component {
 
           <div className="view">
             <h2>Waiting For a Response</h2>
-            <SubmissionList buttonType="acceptance" submissions={waitingSubmissions.slice(0, MAX_WAITING_SUBMISSIONS)} />
+            <SubmissionList type="waitItem" submissions={waitingSubmissions.slice(0, MAX_WAITING_SUBMISSIONS)} />
             {
               (closingSubmissions.length > MAX_WAITING_SUBMISSIONS) && (
                 <div className="text-center">
@@ -67,11 +67,13 @@ export default connect(({ submissions }) => {
     filterDateType: CONSTANTS.SUB_LIST.DATE_RANGE_TYPE.CLOSE,
     startDate: moment(),
     endDate: moment().add(1, "month"),
-    status: CONSTANTS.SUB_LIST.STATUS_FILTER.READY_TO_SUBMIT
+    status: CONSTANTS.SUB_LIST.STATUS_FILTER.READY_TO_SUBMIT,
+    sortBy: CONSTANTS.SUB_LIST.SORTING.CLOSE
   })
 
   const waitingSubmissions = filtering(submissions, {
-    status: [CONSTANTS.SUB_LIST.STATUS_FILTER.SUBMITTED, CONSTANTS.SUB_LIST.STATUS_FILTER.READY_TO_SUBMIT, CONSTANTS.SUB_LIST.STATUS_FILTER.NOT_STARTED]
+    status: [CONSTANTS.SUB_LIST.STATUS_FILTER.SUBMITTED, CONSTANTS.SUB_LIST.STATUS_FILTER.READY_TO_SUBMIT, CONSTANTS.SUB_LIST.STATUS_FILTER.NOT_STARTED],
+    sortBy: CONSTANTS.SUB_LIST.SORTING.CLOSE
   })
 
   return {
