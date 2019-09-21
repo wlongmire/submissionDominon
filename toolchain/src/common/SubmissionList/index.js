@@ -6,8 +6,8 @@ import SubItemClose from './SubItem/SubItemClose'
 
 const getSubItem = function (type, idx, item) {
   const subItems = {
-    'closeItem': <SubItemWait key={idx} item={item} />,
-    'waitItem': <SubItemClose key={idx} item={item} />
+    'closeItem': <SubItemClose key={idx} item={item} />,
+    'waitItem': <SubItemWait key={idx} item={item} />
   }
 
   return (subItems[type]);

@@ -58,23 +58,8 @@
   margin:0;
 }
 
-.editButtonContainer {
-  padding: 0 5px;
-}
-
-.editButton, .dismissButton {
-  background: #FFFFFF;
-  border-radius:3px;
-  width:100%;
-  font-size: 0.8em;
-  height:51%;
-  font-family: helvetica;
-  font-weight: bold;
-}
-
-.dismissButton {
-  background: grey;
-  color:white;
+.details button {
+  width: 40%;
 }
 
 .details .status, .details .closeDate {
