@@ -58,7 +58,6 @@ describe("Submission Selector", () => {
 
   })
 
-
   describe("isStatus", () => {
     beforeAll(() => {
       const STATUSES = CONSTANTS.SUB_LIST.STATUS_FILTER;
@@ -293,6 +292,40 @@ describe("Submission Selector", () => {
 
       const result = filtering(submissions, {});
       expect(result.map(r => r.title)).toEqual(["D", "C", "A", "B"])
+    })
+  })
+
+  describe("getStats", () => {
+    test("should get total acceptances", () => {
+      expect(true).toBe(true);
+    })
+
+    test("should get total acceptances between two dates", () => {
+      expect(true).toBe(true);
+    })
+
+    test("should get total rejections", () => {
+      expect(true).toBe(true);
+    })
+
+    test("should get total rejections between two dates", () => {
+      expect(true).toBe(true);
+    })
+
+    test("should get total waiting", () => {
+      expect(true).toBe(true);
+    })
+
+    test("should get total waiting between two dates", () => {
+      expect(true).toBe(true);
+    })
+
+    test("should get total ready to wait", () => {
+      expect(true).toBe(true);
+    })
+
+    test("should get total ready to wait between two dates", () => {
+      expect(true).toBe(true);
     })
   })
 })

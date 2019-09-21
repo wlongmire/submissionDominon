@@ -7,6 +7,12 @@ export default {
   SUB_LIST: {
     TITLE_MAX_WIDTH: 30,
     MAX_TAGS: 2,
+    STATS: {
+      ACCEPTED: "ACCEPTED",
+      REJECTED: "REJECTED",
+      WAITING: "WAITING",
+      READY: "READY",
+    },
     STATUS_FILTER: {
       NOT_STARTED: "NOT_STARTED",
       READY_TO_SUBMIT: "READY_TO_SUBMIT",

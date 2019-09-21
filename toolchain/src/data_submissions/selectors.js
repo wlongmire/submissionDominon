@@ -42,8 +42,15 @@ const filtering = (submissions, { sortBy, text, tags, status, startDate, endDate
   });
 }
 
+const getStat = (submissions, { type }) => {
+  return submissions.filter((submission) => {
+    return true
+  }).length();
+}
+
 export {
   filtering,
   isInDateRange,
-  isStatus
+  isStatus,
+  getStat
 }
