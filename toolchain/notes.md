@@ -90,3 +90,10 @@ The most pertinant thing I can do is make sure that these filters are actually w
 Then I want to get login through google working so I can link everything to google docs.
 
 I need to rest my head though. I feel like shit.
+
+_______________________________
+
+So the filters actually worked the entire time.
+I WAS THE CHILDREN WHO WERE WRONG (literally. the issue was that I was still getting submissions direct from the store in a child componenet when that was no longer nessiary)
+
+In the meantime I added in a favicon, refactored my sublist to allow for very different types of sub item types, styled some of those alternative options and prepared a new selector for stats. Make some placeholders for the tests needed for it. I'm going finish it off I think, so that all the home page elements are working off of live data...
