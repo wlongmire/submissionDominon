@@ -1,4 +1,4 @@
-import { isInDateRange, isStatus, filtering } from './selectors'
+import { isInDateRange, isStatus, filtering, getStats } from './selectors'
 
 import CONSTANTS from './../common/constants'
 import { createSubmission } from './../common/helper'
@@ -297,35 +297,141 @@ describe("Submission Selector", () => {
 
   describe("getStats", () => {
     test("should get total acceptances", () => {
-      expect(true).toBe(true);
+      const submissions = [
+        createSubmission({ accepted: true }),
+        createSubmission({ accepted: true }),
+        createSubmission({ accepted: false }),
+        createSubmission({ accepted: false }),
+        createSubmission({ accepted: true })
+      ];
+
+      const result = getStats({
+        type: CONSTANTS.SUB_LIST.STATS.ACCEPTED,
+        submissions
+      });
+      expect(result).toBe(3);
     })
 
     test("should get total acceptances between two dates", () => {
-      expect(true).toBe(true);
+      const submissions = [
+        createSubmission({ accepted: true, returnDate: moment().add(1, 'day') }),
+        createSubmission({ accepted: true, returnDate: moment().add(2, 'month') }),
+        createSubmission({ accepted: false, returnDate: moment() }),
+        createSubmission({ accepted: false, returnDate: moment() }),
+        createSubmission({ accepted: true, returnDate: moment().add(2, 'week') })
+      ];
+
+      const result = getStats({
+        type: CONSTANTS.SUB_LIST.STATS.ACCEPTED,
+        submissions,
+        startDate: moment(),
+        endDate: moment().add(1, 'month')
+      });
+      expect(result).toBe(2);
     })
 
     test("should get total rejections", () => {
-      expect(true).toBe(true);
+      const submissions = [
+        createSubmission({ accepted: true }),
+        createSubmission({ accepted: true }),
+        createSubmission({ accepted: false }),
+        createSubmission({ accepted: false }),
+        createSubmission({ accepted: true })
+      ];
+
+      const result = getStats({
+        type: CONSTANTS.SUB_LIST.STATS.REJECTED,
+        submissions
+      });
+      expect(result).toBe(2);
     })
 
     test("should get total rejections between two dates", () => {
-      expect(true).toBe(true);
+      const submissions = [
+        createSubmission({ accepted: true }),
+        createSubmission({ accepted: false, returnDate: moment().add(1, 'day') }),
+        createSubmission({ accepted: false, returnDate: moment().add(1, 'week') }),
+        createSubmission({ accepted: false, returnDate: moment().add(2, 'month') }),
+        createSubmission({ accepted: true })
+      ];
+
+      const result = getStats({
+        type: CONSTANTS.SUB_LIST.STATS.REJECTED,
+        submissions,
+        startDate: moment(),
+        endDate: moment().add(1, 'month')
+      });
+      expect(result).toBe(2);
     })
 
     test("should get total waiting", () => {
-      expect(true).toBe(true);
+      const submissions = [
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.SUBMITTED }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.NOT_STARTED }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.RETURNED }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.SUBMITTED }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.RETURNED }),
+      ];
+
+      const result = getStats({
+        type: CONSTANTS.SUB_LIST.STATS.WAITING,
+        submissions
+      });
+      expect(result).toBe(2);
     })
 
     test("should get total waiting between two dates", () => {
-      expect(true).toBe(true);
+      const submissions = [
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.SUBMITTED, submissionDate: moment(1, 'day') }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.NOT_STARTED, submissionDate: moment() }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.RETURNED, submissionDate: moment() }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.SUBMITTED, submissionDate: moment(2, 'weeks') }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.SUBMITTED, submissionDate: moment(2, 'months') }),
+      ];
+
+      const result = getStats({
+        type: CONSTANTS.SUB_LIST.STATS.WAITING,
+        submissions,
+        startDate: moment(),
+        endDate: moment(1, 'month')
+      });
+      expect(result).toBe(2);
     })
 
-    test("should get total ready to wait", () => {
-      expect(true).toBe(true);
+    test("should get total ready to submit", () => {
+      const submissions = [
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.READY_TO_SUBMIT }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.NOT_STARTED }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.RETURNED }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.READY_TO_SUBMIT }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.RETURNED }),
+      ];
+
+      const result = getStats({
+        type: CONSTANTS.SUB_LIST.STATS.READY,
+        submissions
+      });
+
+      expect(result).toBe(2);
     })
 
-    test("should get total ready to wait between two dates", () => {
-      expect(true).toBe(true);
+    test("should get total ready to submit between two dates", () => {
+      const submissions = [
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.READY_TO_SUBMIT, closeDate: moment(1, 'day') }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.NOT_STARTED }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.RETURNED }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.READY_TO_SUBMIT, closeDate: moment(1, 'week') }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.READY_TO_SUBMIT, closeDate: moment(2, 'month') }),
+        createSubmission({ status: CONSTANTS.SUB_LIST.STATUS_FILTER.RETURNED }),
+      ];
+
+      const result = getStats({
+        type: CONSTANTS.SUB_LIST.STATS.READY,
+        submissions,
+        startDate: moment(),
+        endDate: moment(1, 'month')
+      });
+      expect(result).toBe(2);
     })
   })
 })

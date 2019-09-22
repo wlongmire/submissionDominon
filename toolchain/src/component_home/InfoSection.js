@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { getStats } from './../data_submissions/selectors'
 import DataBlock from './DataBlock';
 
 class InfoSection extends React.Component {
@@ -24,8 +25,13 @@ class InfoSection extends React.Component {
   }
 }
 
-export default connect(({ information }) => {
-  return {
-    information
-  }
+export default connect(({ submissions }) => {
+  return ({
+    information: [
+      {
+        title: "Rejected",
+        amount: 10
+      }
+    ]
+  })
 })(InfoSection);
