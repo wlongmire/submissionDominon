@@ -97,3 +97,12 @@ So the filters actually worked the entire time.
 I WAS THE CHILDREN WHO WERE WRONG (literally. the issue was that I was still getting submissions direct from the store in a child componenet when that was no longer nessiary)
 
 In the meantime I added in a favicon, refactored my sublist to allow for very different types of sub item types, styled some of those alternative options and prepared a new selector for stats. Make some placeholders for the tests needed for it. I'm going finish it off I think, so that all the home page elements are working off of live data...
+
+_______________________________
+
+It's been a little while. Man, I really am overloading myself with work. AGAIN! AS USUAL!
+
+Anyway, the last thing I was working on with this was making sure that Stats worked and I think I will need to make adjustments to the base filtering selector to do it. Let's take a little look....
+
+You know, it looks like I just take on faith that if I can filter for one status, I can filter for them all.
+Which works by me really.

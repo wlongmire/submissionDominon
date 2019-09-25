@@ -5,7 +5,6 @@ const createSubmission = (submission) => {
     id: 1,
     title: "Test Title",
     status: "NOT_STARTED",
-    accepted: null,
     submissionDate: null,
     returnDate: null,
     closeDate: null,
