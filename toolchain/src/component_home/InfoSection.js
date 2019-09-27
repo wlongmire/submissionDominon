@@ -25,13 +25,4 @@ class InfoSection extends React.Component {
   }
 }
 
-export default connect(({ submissions }) => {
-  return ({
-    information: [
-      {
-        title: "Rejected",
-        amount: 10
-      }
-    ]
-  })
-})(InfoSection);
+export default InfoSection;

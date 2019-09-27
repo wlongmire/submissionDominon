@@ -106,3 +106,9 @@ Anyway, the last thing I was working on with this was making sure that Stats wor
 
 You know, it looks like I just take on faith that if I can filter for one status, I can filter for them all.
 Which works by me really.
+
+_______________________________
+Done! Now we just need to hook up the stats to the front page and data will be live and ready.
+
+Then I think I will go back into google logins. I want to at least touch this by the weekend.
+I will.

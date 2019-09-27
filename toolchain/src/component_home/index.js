@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import CONSTANTS from './../common/constants'
-import { filtering } from './../data_submissions/selectors'
+import { filtering, getStats } from './../data_submissions/selectors'
 
 import SubmissionList from './../common/SubmissionList'
 import InfoSection from './InfoSection'
 
 import './style.css'
 
-const Home = function ({ closingSubmissions, waitingSubmissions }) {
+const Home = function ({ closingSubmissions, waitingSubmissions, information }) {
   return (
     <div className="row">
 
@@ -47,7 +47,7 @@ const Home = function ({ closingSubmissions, waitingSubmissions }) {
       <div id="informationViews" className="col-sm-12 col-md-7 mt-2">
         <div className="view">
           <h2>Stats and Information</h2>
-          <InfoSection />
+          <InfoSection information={information} />
         </div>
       </div>
     </div>
@@ -69,8 +69,28 @@ export default connect(({ submissions }) => {
     sortBy: CONSTANTS.SUB_LIST.SORTING.SUBMISSION
   })
 
+  const information = [
+    {
+      title: "accepted",
+      amount: getStats(submissions, { type: CONSTANTS.SUB_LIST.STATS.ACCEPTED })
+    },
+    {
+      title: "rejected",
+      amount: getStats(submissions, { type: CONSTANTS.SUB_LIST.STATS.REJECTED })
+    },
+    {
+      title: "waiting",
+      amount: getStats(submissions, { type: CONSTANTS.SUB_LIST.STATS.WAITING })
+    },
+    {
+      title: "ready",
+      amount: getStats(submissions, { type: CONSTANTS.SUB_LIST.STATS.READY })
+    }
+  ]
+
   return {
     closingSubmissions,
-    waitingSubmissions
+    waitingSubmissions,
+    information
   }
 })(Home)
